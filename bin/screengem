@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+# Add the screengem/lib directory to the load path
+$LOAD_PATH.unshift(File.expand_path("../../lib", __FILE__))
+
+require "screengem"
+
+Screengem::CLI.start(ARGV)
