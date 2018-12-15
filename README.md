@@ -10,9 +10,16 @@ Add this line to your application's Gemfile:
 gem 'screengem'
 ```
 
-## Usage
+## Core Domain Model
 
-TODO: Write usage instructions here
+An Actor asks questions and performs tasks.
+An Actor is able to remember and recall things.
+
+A Question responds to answer.
+
+A Task responds to perform and may execute one or more actions.
+
+![Core Domain Model](/images/ScreengemCore.png)
 
 ## Development
 
