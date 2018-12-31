@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "activesupport", ">= 4.2", "< 6.0"
-  spec.add_runtime_dependency "capybara", "~> 2.18"
+  spec.add_runtime_dependency "capybara", ">= 2.18", "< 4.0"
   spec.add_runtime_dependency "require_all", "~> 2.0"
   spec.add_runtime_dependency "thor", "~> 0.20"
 
