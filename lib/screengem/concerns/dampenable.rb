@@ -30,6 +30,15 @@ module Screengem
           scope
         end
       end
+
+      #
+      # Specify dampening to apply to a primitive.
+      #
+      def dampen_for(seconds)
+        define_singleton_method(:seconds_to_dampen) do
+          seconds
+        end
+      end
     end
 
     def seconds_to_dampen

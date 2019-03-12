@@ -3,18 +3,15 @@ require "thor"
 
 module Screengem
   class CLI < Thor
-    option :root
-    option :config, default: "dampen_configuration.yml"
-    option :questions, default: "questions"
-    option :tasks, default: "tasks"
-    option :quiet, default: false
+    option :root, desc: "The directory to start scanning for Tasks and Questions"
+    option :config, default: "dampen_configuration.yml", desc: "The name of the dampen configuration file"
+    option :quiet, default: false, desc: "Suppress command output"
     desc "generate", "Create the sample dampening configuration"
     def generate
       root = options[:root]
 
       # Require all questions and tasks for inclusion in the sample configuration.
-      require_all File.join(root, options[:questions])
-      require_all File.join(root, options[:tasks])
+      require_all root
 
       Screengem.configure do |config|
         config.dampen_configuration_filename = File.join(root, options[:config])
