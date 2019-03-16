@@ -80,10 +80,8 @@ module Screengem
       @recollections ||= ActiveSupport::HashWithIndifferentAccess.new
     end
 
-    # ARM (2019-03-16): Preserve existing extension mechanism.
-    # Simplify by creating a singleton to host the page references?
     def screen
-      @screen ||= Class.new.new.extend(Screengem::PageReferences)
+      Screengem::PageReferences.instance
     end
   end
 end

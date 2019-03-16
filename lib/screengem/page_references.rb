@@ -1,23 +1,17 @@
 module Screengem
   #
-  # Mixin that gives the ability to get references to page objects.
+  # Singleton that gives the ability to get references to page objects.
   #
+  # On initialization generate a factory method for each page object we can find. Example:
+  #
+  #   def login_page
+  #     Pages::LoginPage.new
+  #   end
+  #
+  class PageReferences
+    include Singleton
 
-  # rubocop:disable Style/GuardClause
-  module PageReferences
-    def self.extended(_mod)
-      # One time definition of the page object references.
-      return unless PageReferences.instance_methods.empty?
-
-      #
-      # Generate a factory method for each page object we can find.
-      #
-      # Example:
-      #
-      #   def login_page
-      #     @login_page ||= Pages::LoginPage.new
-      #   end
-      #
+    def initialize
       generated_method_names = []
 
       Screengem::FeaturePage.descendants.each do |page_object|
@@ -30,13 +24,12 @@ module Screengem
           generated_method_names << method_name
         end
 
-        module_eval(<<~RUBY, __FILE__, __LINE__ + 1)
-          def #{method_name}
-            @#{method_name} ||= #{class_name}.new
+        class_eval(<<~RUBY, __FILE__, __LINE__ + 1)
+          def #{method_name}(*args)
+            #{class_name}.new(*args)
           end
         RUBY
       end
     end
   end
-  # rubocop:enable Style/GuardClause
 end
