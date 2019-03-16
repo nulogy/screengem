@@ -15,6 +15,9 @@ Metrics/MethodLength:
 RSpec/AnyInstance:
   Enabled: false
 
+RSpec/DescribedClass:
+  Enabled: false
+
 RSpec/ExampleLength:
   Max: 20
 

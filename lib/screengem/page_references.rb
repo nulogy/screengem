@@ -20,9 +20,9 @@ module Screengem
 
         if generated_method_names.include?(method_name)
           raise "Name collision: two page objects resolve to '#{method_name}'."
-        else
-          generated_method_names << method_name
         end
+
+        generated_method_names << method_name
 
         class_eval(<<~RUBY, __FILE__, __LINE__ + 1)
           def #{method_name}(*args)
