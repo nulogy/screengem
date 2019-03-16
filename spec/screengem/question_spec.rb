@@ -1,5 +1,8 @@
 module Screengem
   RSpec.describe Question do
+    it_behaves_like "implements configurable"
+    it_behaves_like "implements executable"
+
     let(:actor) { Class.new { include Actor }.new }
     let(:screen) { instance_double(PageReferences) }
     let(:question) { Support::ScreengemFixture.question_1.new }
@@ -14,12 +17,6 @@ module Screengem
     it "all questions support dampening unless overridden with skip_dampening" do
       expect(Support::ScreengemFixture.question_supports_dampening).to be_supports_dampening
       expect(Support::ScreengemFixture.question_skips_dampening).to_not be_supports_dampening
-    end
-
-    it "warns subclasses to implement the execute method" do
-      base = Screengem::Question.new
-
-      expect { base.execute }.to raise_error(RuntimeError, /You must define an execute method/)
     end
   end
 end

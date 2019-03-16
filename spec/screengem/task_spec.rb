@@ -1,5 +1,8 @@
 module Screengem
   RSpec.describe Task do
+    it_behaves_like "implements configurable"
+    it_behaves_like "implements executable"
+
     let(:actor) { Class.new { include Actor }.new }
     let(:screen) { instance_double(PageReferences) }
 
@@ -15,12 +18,6 @@ module Screengem
 
       it "all tasks support dampening unless overridden with skip_dampening" do
         expect(Support::ScreengemFixture.task_1).to be_supports_dampening
-      end
-
-      it "warns subclasses to implement the execute method" do
-        base = Screengem::Task.new
-
-        expect { base.execute }.to raise_error(RuntimeError, /You must define an execute method/)
       end
     end
 
