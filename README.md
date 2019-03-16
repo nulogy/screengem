@@ -2,12 +2,19 @@
 
 A simple Ruby implementation of the [Screenplay Pattern](https://ideas.riverglide.com/page-objects-refactored-12ec3541990). 
 
-## Installation
+Screengem promotes writing step definitions in terms of actors, the tasks that the actor performs, 
+and the questions that the actor asks. 
 
-Add this line to your application's Gemfile:
+## Example Step Definitions
 
 ```ruby
-gem 'screengem'
+Given(/^that they are signed in and viewing the (.+?)$/) do |section_name|
+  actor.performs(task.sign_in, task.remember_signature_counter(section_name))
+end
+
+Then(/^their signature is captured$/) do
+  actor.asks(question.signature_captured)
+end
 ```
 
 ## Core Domain Model
@@ -20,6 +27,14 @@ A Question responds to answer.
 A Task responds to perform and may execute one or more actions.
 
 ![Core Domain Model](/images/ScreengemCore.png)
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'screengem'
+```
 
 ## Development
 
