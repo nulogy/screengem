@@ -1,5 +1,3 @@
-require "screengem_spec_helper"
-
 module Screengem
   RSpec.describe Action do
     let(:actor) { Class.new { include Actor }.new }

@@ -1,5 +1,3 @@
-require "screengem_spec_helper"
-
 module Screengem
   RSpec.describe DSL do
     subject(:step_definition) { Class.new.include(described_class).new }

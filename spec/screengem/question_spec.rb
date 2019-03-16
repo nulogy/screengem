@@ -1,5 +1,3 @@
-require "screengem_spec_helper"
-
 module Screengem
   RSpec.describe Question do
     let(:actor) { Class.new { include Actor }.new }

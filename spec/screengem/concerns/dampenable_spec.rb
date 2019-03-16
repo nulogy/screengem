@@ -1,5 +1,3 @@
-require "screengem_spec_helper"
-
 module Screengem
   RSpec.describe Dampenable do
     describe "question" do

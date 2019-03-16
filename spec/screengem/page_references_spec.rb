@@ -1,5 +1,3 @@
-require "screengem_spec_helper"
-
 module Screengem
   RSpec.describe PageReferences do
     Module.new do

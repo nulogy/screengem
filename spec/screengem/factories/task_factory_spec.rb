@@ -1,5 +1,3 @@
-require "screengem_spec_helper"
-
 module Screengem
   module Factories
     RSpec.describe TaskFactory do
