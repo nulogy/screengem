@@ -1,5 +1,3 @@
-require "screengem_spec_helper"
-
 module Screengem
   RSpec.describe IncorrectAnswer do
     let(:question) { Support::ScreengemFixture.question_1.new }

@@ -1,5 +1,3 @@
-require "screengem_spec_helper"
-
 module Screengem
   RSpec.describe Actor do
     let(:action_1) { Support::ScreengemFixture.action_1.new }
