@@ -2,6 +2,14 @@
 
 ## master (unreleased)
 
+## 0.3.0 (2019-03-16)
+
+### New Features
+
+* Scope screen elements to the `screen` instance variable
+* Screen elements are no longer memoized
+* Add example step definitions to the README
+
 ## 0.2.0 (2019-03-12)
 
 ### New features
