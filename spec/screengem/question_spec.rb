@@ -1,7 +1,7 @@
 module Screengem
   RSpec.describe Question do
     let(:actor) { Class.new { include Actor }.new }
-    let(:screen) { double("Screen") } # rubocop:disable RSpec/VerifiedDoubles
+    let(:screen) { instance_double(PageReferences) }
     let(:question) { Support::ScreengemFixture.question_1.new }
     let(:configured_question) { question.configure(actor, screen) }
 
@@ -12,8 +12,8 @@ module Screengem
     end
 
     it "all questions support dampening unless overridden with skip_dampening" do
-      expect(Support::ScreengemFixture.question_supports_dampening.supports_dampening?).to eq(true)
-      expect(Support::ScreengemFixture.question_skips_dampening.supports_dampening?).to eq(false)
+      expect(Support::ScreengemFixture.question_supports_dampening).to be_supports_dampening
+      expect(Support::ScreengemFixture.question_skips_dampening).to_not be_supports_dampening
     end
 
     it "warns subclasses to implement the execute method" do

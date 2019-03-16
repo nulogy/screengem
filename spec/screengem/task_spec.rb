@@ -1,7 +1,7 @@
 module Screengem
   RSpec.describe Task do
     let(:actor) { Class.new { include Actor }.new }
-    let(:screen) { double("Screen") } # rubocop:disable RSpec/VerifiedDoubles
+    let(:screen) { instance_double(PageReferences) }
 
     describe "basic task" do
       let(:task) { Support::ScreengemFixture.task_1.new }
@@ -14,7 +14,7 @@ module Screengem
       end
 
       it "all tasks support dampening unless overridden with skip_dampening" do
-        expect(Support::ScreengemFixture.task_1.supports_dampening?).to eq(true)
+        expect(Support::ScreengemFixture.task_1).to be_supports_dampening
       end
 
       it "warns subclasses to implement the execute method" do

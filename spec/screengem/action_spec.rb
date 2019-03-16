@@ -1,7 +1,7 @@
 module Screengem
   RSpec.describe Action do
     let(:actor) { Class.new { include Actor }.new }
-    let(:screen) { double("Screen") } # rubocop:disable RSpec/VerifiedDoubles
+    let(:screen) { instance_double(PageReferences) }
     let(:action) { Support::ScreengemFixture.action_1.new }
     let(:configured_action) { action.configure(actor, screen) }
 
