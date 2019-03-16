@@ -13,11 +13,6 @@ module Screengem
         configured_task.perform
       end
 
-      it "implements two phase initialization" do
-        expect(task).to have_attributes(actor: nil)
-        expect(configured_task).to have_attributes(actor: actor, screen: screen)
-      end
-
       it "all tasks support dampening unless overridden with skip_dampening" do
         expect(Support::ScreengemFixture.task_1.supports_dampening?).to eq(true)
       end

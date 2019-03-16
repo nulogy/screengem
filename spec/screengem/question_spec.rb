@@ -11,11 +11,6 @@ module Screengem
       configured_question.answer
     end
 
-    it "implements two phase initialization" do
-      expect(question).to have_attributes(actor: nil)
-      expect(configured_question).to have_attributes(actor: actor, screen: screen)
-    end
-
     it "all questions support dampening unless overridden with skip_dampening" do
       expect(Support::ScreengemFixture.question_supports_dampening.supports_dampening?).to eq(true)
       expect(Support::ScreengemFixture.question_skips_dampening.supports_dampening?).to eq(false)
