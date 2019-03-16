@@ -8,8 +8,9 @@ module Screengem
   # The ability to remember and recall values is used to carry state forward from one
   # step definition to another (as the preferred alternative to instance variables).
   #
-  # Action, question, and task instances are extended with PageReferences so that
-  # they can interact with the application via page objects.
+  # Action, question, and task instances (aka primitives) are configured with:
+  #   (1) a reference to the actor that is interacting with the primitive
+  #   (2) a reference to the screen instance that hosts accessors to the page objects.
   #
   module Actor
     #
@@ -17,7 +18,7 @@ module Screengem
     #
     def asks(*questions)
       questions.each do |question|
-        question.configure(self).extend(page_references)
+        question.configure(self, screen)
 
         next if question.answer
 
@@ -32,7 +33,7 @@ module Screengem
     #
     def performs(*tasks)
       tasks.each do |task|
-        task.configure(self).extend(page_references)
+        task.configure(self, screen)
 
         task.perform
       end
@@ -63,7 +64,7 @@ module Screengem
     #
     def takes_action(*actions)
       actions.each do |action|
-        action.configure(self).extend(page_references)
+        action.configure(self, screen)
 
         action.execute
       end
@@ -75,12 +76,14 @@ module Screengem
       Screengem::IncorrectAnswer.new(question)
     end
 
-    def page_references
-      @page_references ||= Screengem::PageReferences
-    end
-
     def recollections
       @recollections ||= ActiveSupport::HashWithIndifferentAccess.new
+    end
+
+    # ARM (2019-03-16): Preserve existing extension mechanism.
+    # Simplify by creating a singleton to host the page references?
+    def screen
+      @screen ||= Class.new.new.extend(Screengem::PageReferences)
     end
   end
 end

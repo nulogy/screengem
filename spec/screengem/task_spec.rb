@@ -3,10 +3,11 @@ require "screengem_spec_helper"
 module Screengem
   RSpec.describe Task do
     let(:actor) { Class.new { include Actor }.new }
+    let(:screen) { double("Screen") } # rubocop:disable RSpec/VerifiedDoubles
 
     describe "basic task" do
       let(:task) { Support::ScreengemFixture.task_1.new }
-      let(:configured_task) { task.configure(actor) }
+      let(:configured_task) { task.configure(actor, screen) }
 
       it "calling perform calls execute on task" do
         expect(configured_task).to receive(:execute).and_call_original
@@ -16,11 +17,11 @@ module Screengem
 
       it "implements two phase initialization" do
         expect(task).to have_attributes(actor: nil)
-        expect(configured_task).to have_attributes(actor: be(actor))
+        expect(configured_task).to have_attributes(actor: actor, screen: screen)
       end
 
       it "all tasks support dampening unless overridden with skip_dampening" do
-        expect(Support::ScreengemFixture.task_1.supports_dampening?).to be(true)
+        expect(Support::ScreengemFixture.task_1.supports_dampening?).to eq(true)
       end
 
       it "warns subclasses to implement the execute method" do
@@ -32,7 +33,7 @@ module Screengem
 
     describe "composite task" do
       let(:composite_task) { Support::ScreengemFixture.composite_task.new }
-      let(:configured_composite_task) { composite_task.configure(actor) }
+      let(:configured_composite_task) { composite_task.configure(actor, screen) }
 
       before do
         Screengem.configure do |config|

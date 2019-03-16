@@ -2,9 +2,10 @@ require "screengem_spec_helper"
 
 module Screengem
   RSpec.describe Question do
-    let(:actor) { double("Actor") } # rubocop:disable RSpec/VerifiedDoubles
+    let(:actor) { Class.new { include Actor }.new }
+    let(:screen) { double("Screen") } # rubocop:disable RSpec/VerifiedDoubles
     let(:question) { Support::ScreengemFixture.question_1.new }
-    let(:configured_question) { question.configure(actor) }
+    let(:configured_question) { question.configure(actor, screen) }
 
     it "calling answer calls execute on question" do
       expect(configured_question).to receive(:execute).and_call_original
@@ -14,12 +15,12 @@ module Screengem
 
     it "implements two phase initialization" do
       expect(question).to have_attributes(actor: nil)
-      expect(configured_question).to have_attributes(actor: be(actor))
+      expect(configured_question).to have_attributes(actor: actor, screen: screen)
     end
 
     it "all questions support dampening unless overridden with skip_dampening" do
-      expect(Support::ScreengemFixture.question_supports_dampening.supports_dampening?).to be(true)
-      expect(Support::ScreengemFixture.question_skips_dampening.supports_dampening?).to be(false)
+      expect(Support::ScreengemFixture.question_supports_dampening.supports_dampening?).to eq(true)
+      expect(Support::ScreengemFixture.question_skips_dampening.supports_dampening?).to eq(false)
     end
 
     it "warns subclasses to implement the execute method" do
