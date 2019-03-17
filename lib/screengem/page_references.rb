@@ -9,7 +9,7 @@ module Screengem
   #   end
   #
   class PageReferences
-    include Singleton
+    include ::Singleton
 
     def initialize
       generated_method_names = []
