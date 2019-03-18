@@ -1,4 +1,4 @@
-RSpec.shared_examples "implements configurable" do
+RSpec.shared_examples "configurable" do
   it "implements Screengem::Configurable" do
     actor = Class.new { include Screengem::Actor }.new
     screen = instance_double(Screengem::ScreenElements)

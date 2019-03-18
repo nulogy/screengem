@@ -1,6 +1,6 @@
 module Screengem
   RSpec.describe Action do
-    it_behaves_like "implements configurable"
-    it_behaves_like "implements executable"
+    it_behaves_like "configurable"
+    it_behaves_like "executable"
   end
 end
