@@ -77,7 +77,7 @@ module Screengem
     # Always respond with no dampening.
     #
     class None
-      def seconds_to_dampen(_primitive_scope, _class_name)
+      def seconds_to_dampen(_primitive_scope, _primitive_class_name)
         0
       end
     end

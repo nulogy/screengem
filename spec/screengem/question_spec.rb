@@ -1,12 +1,12 @@
 module Screengem
   RSpec.describe Question do
-    it_behaves_like "implements configurable"
-    it_behaves_like "implements executable"
-
     let(:actor) { Class.new { include Actor }.new }
-    let(:screen) { instance_double(PageReferences) }
+    let(:screen) { instance_double(ScreenElements) }
     let(:question) { Support::ScreengemFixture.question_1.new }
     let(:configured_question) { question.configure(actor, screen) }
+
+    it_behaves_like "configurable"
+    it_behaves_like "executable"
 
     it "calling answer calls execute on question" do
       expect(configured_question).to receive(:execute).and_call_original

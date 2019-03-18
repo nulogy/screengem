@@ -1,25 +1,25 @@
 module Screengem
   #
-  # Singleton that gives the ability to get references to page objects.
+  # Singleton that gives the ability to get references to screen elements.
   #
-  # On initialization generate a factory method for each page object we can find. Example:
+  # On initialization generate a factory method for each screen element we can find. Example:
   #
   #   def login_page
   #     Pages::LoginPage.new
   #   end
   #
-  class PageReferences
+  class ScreenElements
     include ::Singleton
 
     def initialize
       generated_method_names = []
 
-      Screengem::FeaturePage.descendants.each do |page_object|
-        class_name = page_object.name
+      Screengem::ScreenElement.descendants.each do |screen_element|
+        class_name = screen_element.name
         method_name = class_name.demodulize.underscore
 
         if generated_method_names.include?(method_name)
-          raise "Name collision: two page objects resolve to '#{method_name}'."
+          raise "Name collision: two screen elements resolve to '#{method_name}'."
         end
 
         generated_method_names << method_name

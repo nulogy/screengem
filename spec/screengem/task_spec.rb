@@ -1,10 +1,10 @@
 module Screengem
   RSpec.describe Task do
-    it_behaves_like "implements configurable"
-    it_behaves_like "implements executable"
-
     let(:actor) { Class.new { include Actor }.new }
-    let(:screen) { instance_double(PageReferences) }
+    let(:screen) { instance_double(ScreenElements) }
+
+    it_behaves_like "configurable"
+    it_behaves_like "executable"
 
     describe "basic task" do
       let(:task) { Support::ScreengemFixture.task_1.new }

@@ -6,8 +6,8 @@ require "active_support/core_ext"
 
 require "capybara/dsl"
 
-require "screengem/feature_page"
 require "screengem/incorrect_answer"
+require "screengem/screen_element"
 require "screengem/screengem_error"
 
 require "screengem/configuration"
@@ -37,7 +37,7 @@ require "screengem/factories/standard_action_factory"
 require "screengem/factories/question_factory"
 require "screengem/factories/task_factory"
 
-require "screengem/page_references"
+require "screengem/screen_elements"
 
 require "screengem/cli"
 
