@@ -4,7 +4,7 @@ module Screengem
     it_behaves_like "implements executable"
 
     let(:actor) { Class.new { include Actor }.new }
-    let(:screen) { instance_double(PageReferences) }
+    let(:screen) { instance_double(ScreenElements) }
 
     describe "basic task" do
       let(:task) { Support::ScreengemFixture.task_1.new }

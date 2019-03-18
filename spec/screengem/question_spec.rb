@@ -4,7 +4,7 @@ module Screengem
     it_behaves_like "implements executable"
 
     let(:actor) { Class.new { include Actor }.new }
-    let(:screen) { instance_double(PageReferences) }
+    let(:screen) { instance_double(ScreenElements) }
     let(:question) { Support::ScreengemFixture.question_1.new }
     let(:configured_question) { question.configure(actor, screen) }
 

@@ -10,7 +10,7 @@ module Screengem
   #
   # Action, question, and task instances (aka primitives) are configured with:
   #   (1) a reference to the actor that is interacting with the primitive
-  #   (2) a reference to the screen instance that hosts accessors to the page objects.
+  #   (2) a reference to the screen instance that hosts accessors to the screen elements.
   #
   module Actor
     #
@@ -81,7 +81,7 @@ module Screengem
     end
 
     def screen
-      Screengem::PageReferences.instance
+      Screengem::ScreenElements.instance
     end
   end
 end

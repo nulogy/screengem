@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.4.0 (2019-03-18)
+
+### New Features
+
+* Rename Screengem::FeaturePage to Screengem::ScreenElement
+
 ## 0.3.0 (2019-03-16)
 
 ### New Features
