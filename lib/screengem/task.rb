@@ -3,6 +3,8 @@ module Screengem
   # Base class for all tasks.
   #
   class Task
+    include RSpec::Matchers
+
     include Screengem::Actionable
     include Screengem::Configurable
     include Screengem::Dampenable

@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.5.0 (2019-03-28)
+
+### New Features
+
+* [RSpec Expectations](https://github.com/rspec/rspec-expectations) are available in all primitives: actions, questions, and tasks.
+
 ## 0.4.0 (2019-03-18)
 
 ### New Features
