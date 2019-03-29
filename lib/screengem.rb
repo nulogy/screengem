@@ -5,6 +5,7 @@ require "active_support"
 require "active_support/core_ext"
 
 require "capybara/dsl"
+require "rspec/expectations"
 
 require "screengem/incorrect_answer"
 require "screengem/screen_element"

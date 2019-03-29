@@ -20,7 +20,7 @@ end
 ## Core Domain Model
 
 An Actor asks questions and performs tasks.
-An Actor is able to remember and recall things.
+An Actor is able to remember and recall key-value pairs.
 
 A Question responds to answer.
 
