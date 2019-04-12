@@ -2,7 +2,11 @@
 
 ## master (unreleased)
 
-## 0.5.0 (2019-03-28)
+## 0.6.0 (2019-04-11)
+
+### New Features
+
+* Whenever an actor recalls a value perform a `reload` on the value. Avoid the `reload` by passing `false` to the `reload:` argument.
 
 ### New Features
 

@@ -44,8 +44,10 @@ module Screengem
     #
     # Used by an actor to recall a value for the specified tag.
     #
-    def recall(tag)
-      recollections.fetch(tag)
+    def recall(tag, reload: true)
+      recollections.fetch(tag).tap do |value|
+        value.reload if reload && value.respond_to?(:reload)
+      end
     end
 
     #
