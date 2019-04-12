@@ -8,6 +8,8 @@
 
 * Whenever an actor recalls a value perform a `reload` on the value. Avoid the `reload` by passing `false` to the `reload:` argument.
 
+## 0.5.0 (2019-03-28)
+
 ### New Features
 
 * [RSpec Expectations](https://github.com/rspec/rspec-expectations) are available in all primitives: actions, questions, and tasks.
