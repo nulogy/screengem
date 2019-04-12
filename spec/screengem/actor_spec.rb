@@ -41,8 +41,7 @@ module Screengem
 
         expect(question_2).to_not receive(:execute)
 
-        expect { actor.asks(question_1, question_2) }
-          .to raise_error(IncorrectAnswer, "Question one?")
+        expect { actor.asks(question_1, question_2) }.to raise_error(IncorrectAnswer, "Question one?")
       end
     end
 
@@ -93,6 +92,37 @@ module Screengem
 
         expect(actor.recall(:sheet_id)).to eq(3)
         expect(actor.recall(:company_name)).to eq("PackPlus")
+      end
+
+      context "when recalling models" do
+        let(:model) { double }
+
+        it "perform a reload" do
+          allow(model).to receive(:respond_to?).and_return(true)
+          expect(model).to receive(:reload)
+
+          actor.remember(model: model)
+
+          actor.recall(:model)
+        end
+
+        it "avoid a reload for values that do not respond to reload" do
+          allow(model).to receive(:respond_to?).and_return(false)
+          expect(model).to_not receive(:reload)
+
+          actor.remember(model: model)
+
+          actor.recall(:model)
+        end
+
+        it "set the reload argument to false to avoid reload" do
+          allow(model).to receive(:respond_to?).and_return(true)
+          expect(model).to_not receive(:reload)
+
+          actor.remember(model: model)
+
+          actor.recall(:model, reload: false)
+        end
       end
     end
   end
