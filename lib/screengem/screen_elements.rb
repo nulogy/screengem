@@ -5,7 +5,7 @@ module Screengem
   # On initialization generate a factory method for each screen element we can find. Example:
   #
   #   def login_page
-  #     Pages::LoginPage.new
+  #     ScreenElements::LoginPage.new
   #   end
   #
   class ScreenElements
