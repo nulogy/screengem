@@ -39,17 +39,20 @@ Style/Documentation:
 Style/EmptyMethod:
   Enabled: false
 
+Style/ExpandPathArguments:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/MutableConstant:
   Enabled: false
 
-Style/ExpandPathArguments:
-  Enabled: false
-
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/SymbolArray:
+  Enabled: false
 
 Style/RescueModifier:
   Enabled: false
