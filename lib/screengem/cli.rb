@@ -8,6 +8,9 @@ module Screengem
     option :quiet, default: false, desc: "Suppress command output"
     desc "generate", "Create the sample dampening configuration"
     def generate
+      # Require Rails to be loaded so that we can successfully require questions and tasks.
+      require "./config/environment"
+
       root = options[:root]
 
       # Require all questions and tasks for inclusion in the sample configuration.

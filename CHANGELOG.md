@@ -2,6 +2,16 @@
 
 ## master (unreleased)
 
+## 0.7.0 (2019-04-18)
+
+### New Features
+
+* Introduce the `visit_path` method for subclasses of ScreenElement (no need to call `visit`).
+
+### Bug fixes
+
+* Load the Rails environment to run the `screengem` command that creates dampening configurations
+
 ## 0.6.0 (2019-04-11)
 
 ### New Features
