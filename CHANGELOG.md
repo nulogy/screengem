@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.7.1 (2019-04-20)
+
+### Bug fixes
+
+* Fixed failure to generate screen element methods unless no arg constructor.
+
 ## 0.7.0 (2019-04-18)
 
 ### New Features
