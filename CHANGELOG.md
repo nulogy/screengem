@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.7.2 (2019-04-25)
+
+### New Features
+
+* Improved error message when a fact cannot be recalled.
+
 ## 0.7.1 (2019-04-20)
 
 ### Bug fixes

@@ -15,6 +15,10 @@ module Screengem
     subject(:actor) do
       Class.new do
         include Screengem::Actor
+
+        def name
+          "Stephen King"
+        end
       end.new
     end
 
@@ -92,6 +96,14 @@ module Screengem
 
         expect(actor.recall(:sheet_id)).to eq(3)
         expect(actor.recall(:company_name)).to eq("PackPlus")
+      end
+
+      it "displays a message when the tag cannot be recalled" do
+        actor.remember(book: "It", state: "Maine")
+
+        expect { actor.recall(:movie) }.to raise_error(
+          RuntimeError, /Stephen King does not recall movie\nStephen King recalls: book and state/
+        )
       end
 
       context "when recalling models" do
