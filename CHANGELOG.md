@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.7.3 (2019-05-27)
+
+### New Features
+
+* Add routes method to screen elements to expose Rails.application.routes.
+
 ## 0.7.2 (2019-04-25)
 
 ### New Features
