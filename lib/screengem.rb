@@ -9,6 +9,7 @@ require "rspec/expectations"
 
 require "screengem/automatic_visit"
 require "screengem/incorrect_answer"
+require "screengem/rails_routes"
 require "screengem/screen_element"
 require "screengem/screengem_error"
 

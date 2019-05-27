@@ -6,6 +6,7 @@ module Screengem
   #
   class ScreenElement
     include Capybara::DSL
+    include Screengem::RailsRoutes
 
     def visit(visit_uri = visit_path)
       return if visit_uri == page.current_path
