@@ -36,7 +36,7 @@ module Screengem
     end
 
     def methods_to_decorate
-      @methods_to_decorate ||= screen_element.public_methods(false) - [:visit, :visit_path]
+      @methods_to_decorate ||= screen_element.public_methods(true) - [:visit, :visit_path]
     end
   end
 end
