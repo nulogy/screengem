@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.8.0 (2019-06-27)
+
+### New Features
+
+* Auto visit on all public ScreenElement methods including inherited methods.
+
 ## 0.7.3 (2019-05-27)
 
 ### New Features
