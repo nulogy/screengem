@@ -44,9 +44,10 @@ To enable and configure dampening perform the following steps:
 
 1. Create a sample dampening configuration `screengem generate --root features_screenplay`
 1. Tweak the sample dampening configuration
-1. Promote the sample dampening configuration `cp ./features_screenplay/dampen_configuration.yml.sample ./dampen_configuration.yml`
+1. Promote the sample dampening configuration `cp ./features_screenplay/dampen_configuration.yml.sample ./features_screenplay/dampen_configuration.yml`
 1. Enable dampening `export APPLY_DAMPENING=1`
 
+To stop dampening, run `unset APPLY_DAMPENING`
 
 ## Development
 
