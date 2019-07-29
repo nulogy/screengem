@@ -36,6 +36,18 @@ Add this line to your application's Gemfile:
 gem 'screengem'
 ```
 
+## Dampening
+
+It sometimes makes sense to slow down the automation. This is known as dampening.
+
+To enable and configure dampening perform the following steps:
+
+1. Create a sample dampening configuration `screengem generate --root features_screenplay`
+1. Tweak the sample dampening configuration
+1. Promote the sample dampening configuration `cp ./features_screenplay/dampen_configuration.yml.sample ./dampen_configuration.yml`
+1. Enable dampening `export APPLY_DAMPENING=1`
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
