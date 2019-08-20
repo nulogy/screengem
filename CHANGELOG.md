@@ -2,6 +2,11 @@
 
 ## master (unreleased)
 
+## 0.8.1 (2019-09-20)
+
+* Support for Rails 6 (only ActiveSupport)
+* Latest development dependencies
+
 ## 0.8.0 (2019-06-27)
 
 ### New Features
