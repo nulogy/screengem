@@ -12,6 +12,9 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Enabled: false
 
+Metrics/ModuleLength:
+  Enabled: false
+
 RSpec/AnyInstance:
   Enabled: false
 
