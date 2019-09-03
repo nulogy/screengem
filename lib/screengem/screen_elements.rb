@@ -29,7 +29,7 @@ module Screengem
 
         method_name = class_name.demodulize.underscore
 
-        # Create some safety by detecting and failing fast for duplicate creation method names
+        # Create some safety by detecting and failing fast for duplicate creation method names.
         if generated_method_names.include?(method_name)
           raise "Name collision: two screen elements resolve to '#{method_name}'."
         end
