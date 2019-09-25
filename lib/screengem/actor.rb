@@ -86,7 +86,7 @@ module Screengem
     end
 
     def recollections
-      @recollections ||= ActiveSupport::HashWithIndifferentAccess.new
+      ActorMemory.instance.recollections(self)
     end
 
     def screen

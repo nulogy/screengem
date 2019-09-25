@@ -22,6 +22,8 @@ module Screengem
       end.new
     end
 
+    before { ActorMemory.instance.clear }
+
     describe "asks" do
       it "a single question" do
         expect(question_1).to receive(:configure).and_call_original
