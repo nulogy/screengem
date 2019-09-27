@@ -8,11 +8,11 @@ and the questions that the actor asks.
 ## Example Step Definitions
 
 ```ruby
-Given(/^that they are signed in and viewing the (.+?)$/) do |section_name|
+Given("that they are signed in and viewing the {section_name}") do |section_name|
   actor.performs(task.sign_in, task.remember_signature_counter(section_name))
 end
 
-Then(/^their signature is captured$/) do
+Then("their signature is captured") do
   actor.asks(question.signature_captured)
 end
 ```
@@ -28,12 +28,16 @@ A Task responds to perform and may execute one or more actions.
 
 ![Core Domain Model](/images/ScreengemCore.png)
 
-## Installation
+## Actor Memory
 
-Add this line to your application's Gemfile:
+Actors are able to remember and recall facts. This is the recommended way to
+pass state between steps. To clear all actor's memory before each scenario
+add a hook: 
 
-```ruby
-gem 'screengem'
+```
+Before do
+  Screengem::ActorMemory.instance.clear
+end
 ```
 
 ## Dampening
@@ -48,6 +52,14 @@ To enable and configure dampening perform the following steps:
 1. Enable dampening `export APPLY_DAMPENING=1`
 
 To stop dampening, run `unset APPLY_DAMPENING`
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'screengem'
+```
 
 ## Development
 
