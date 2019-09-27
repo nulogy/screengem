@@ -2,7 +2,11 @@
 
 ## master (unreleased)
 
-## 0.8.1 (2019-09-20)
+## 0.9.0 (2019-09-25)
+
+* Support for actor memory outside actor instances (support ParameterType actors)
+
+## 0.8.1 (2019-08-20)
 
 * Support for Rails 6 (only ActiveSupport)
 * Latest development dependencies

@@ -30,6 +30,7 @@ require "screengem/browser_action"
 require "screengem/question"
 require "screengem/task"
 
+require "screengem/actor_memory"
 require "screengem/actor"
 
 require "screengem/factories/factory_creation_error"
