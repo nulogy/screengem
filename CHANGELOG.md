@@ -2,6 +2,11 @@
 
 ## master (unreleased)
 
+## 0.9.1 (2019-10-22)
+
+* Relax the require_all dependency
+* Latest development dependencies
+
 ## 0.9.0 (2019-09-25)
 
 * Support for actor memory outside actor instances (support ParameterType actors)
