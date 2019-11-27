@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+  spec.required_ruby_version = "~> 2.5"
 
   spec.add_runtime_dependency "activesupport", ">= 4.2", "< 6.1"
   spec.add_runtime_dependency "capybara", ">= 2.18", "< 4.0"
@@ -35,8 +36,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "thor", "~> 0.20"
 
   spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.8"
-  spec.add_development_dependency "rubocop", "~> 0.75"
-  spec.add_development_dependency "rubocop-rspec", "~> 1.36"
+  spec.add_development_dependency "rspec", "~> 3.9"
+  spec.add_development_dependency "rubocop", "~> 0.76"
+  spec.add_development_dependency "rubocop-performance", "~> 1.5"
+  spec.add_development_dependency "rubocop-rspec", "~> 1.37"
   spec.add_development_dependency "simplecov", "~> 0.17"
 end
