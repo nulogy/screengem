@@ -1,14 +1,14 @@
 module Screengem
   #
-  # Mixin that allows an actor to perform tasks, ask questions, take actions, and
-  # to remember and recall tagged values.
+  # Mixin that allows an actor to perform tasks, ask questions, and to remember and
+  # recall tagged values.
   #
   # Return self for those methods that may be chained in the step definition DSL.
   #
   # The ability to remember and recall values is used to carry state forward from one
   # step definition to another (as the preferred alternative to instance variables).
   #
-  # Action, question, and task instances (aka primitives) are configured with:
+  # Question and task instances (aka primitives) are configured with:
   #   (1) a reference to the actor that is interacting with the primitive
   #   (2) a reference to the screen instance that hosts accessors to the screen elements.
   #
@@ -64,19 +64,6 @@ module Screengem
       recollections.merge!(facts)
 
       self
-    end
-
-    #
-    # Used by an actor to take one or more actions.
-    #
-    # Used to implement tasks. Actions do not appear in step definitions.
-    #
-    def takes_action(*actions)
-      actions.each do |action|
-        action.configure(self, screen)
-
-        action.execute
-      end
     end
 
     private

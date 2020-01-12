@@ -1,7 +1,11 @@
 # Change log
 
 ## master (unreleased)
-* Bump development dependencies
+
+## 0.10.0 (2020-01-11)
+
+* Remove action abstraction
+* Latest development dependencies
 
 ## 0.9.1 (2019-10-22)
 

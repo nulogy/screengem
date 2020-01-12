@@ -1,9 +1,5 @@
 module Screengem
   RSpec.describe Actor do
-    let(:action_1) { Support::ScreengemFixture.action_1.new }
-    let(:action_2) { Support::ScreengemFixture.action_2.new }
-    let(:action_3) { Support::ScreengemFixture.action_3.new }
-
     let(:question_1) { Support::ScreengemFixture.question_1.new }
     let(:question_2) { Support::ScreengemFixture.question_2.new }
     let(:question_3) { Support::ScreengemFixture.question_3.new }
@@ -65,23 +61,6 @@ module Screengem
         end
 
         actor.performs(task_1, task_2, task_3)
-      end
-    end
-
-    describe "takes" do
-      it "a single action" do
-        expect(action_1).to receive(:execute)
-
-        actor.takes_action(action_1)
-      end
-
-      it "multiple actions" do
-        [action_1, action_2, action_3].each do |action| # rubocop:disable RSpec/IteratedExpectation
-          expect(action).to receive(:configure).and_call_original
-          expect(action).to receive(:execute).and_call_original
-        end
-
-        actor.takes_action(action_1, action_2, action_3)
       end
     end
 
