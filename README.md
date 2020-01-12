@@ -24,7 +24,7 @@ An Actor is able to remember and recall key-value pairs.
 
 A Question responds to answer.
 
-A Task responds to perform and may execute one or more actions.
+A Task responds to perform.
 
 ![Core Domain Model](/images/ScreengemCore.png)
 

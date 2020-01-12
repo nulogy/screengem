@@ -1,41 +1,9 @@
 module Support
   #
   # A globally shared test fixture that defines a sample set of
-  # Screengem primitives: actions, questions and tasks.
+  # Screengem primitives: questions and tasks.
   #
   module ScreengemFixture
-    module Actions
-      class ActionOneAction < Screengem::Action
-        def execute
-        end
-      end
-
-      class ActionOneActionBrowser < Screengem::BrowserAction
-        def execute
-        end
-      end
-
-      class ActionTwoAction < Screengem::Action
-        def execute
-        end
-      end
-
-      class ActionTwoActionBrowser < Screengem::BrowserAction
-        def execute
-        end
-      end
-
-      class ActionThreeAction < Screengem::Action
-        def execute
-        end
-      end
-
-      class ActionThreeActionBrowser < Screengem::BrowserAction
-        def execute
-        end
-      end
-    end
-
     module Questions
       class QuestionOneQuestion < Screengem::Question
         def execute
@@ -89,33 +57,6 @@ module Support
           TaskTwoTask
         end
       end
-    end
-
-    #
-    # Convenience methods for actions
-    #
-    def self.action_1
-      Support::ScreengemFixture::Actions::ActionOneAction
-    end
-
-    def self.browser_action_1
-      Support::ScreengemFixture::Actions::ActionOneActionBrowser
-    end
-
-    def self.action_2
-      Support::ScreengemFixture::Actions::ActionTwoAction
-    end
-
-    def self.browser_action_2
-      Support::ScreengemFixture::Actions::ActionTwoActionBrowser
-    end
-
-    def self.action_3
-      Support::ScreengemFixture::Actions::ActionThreeAction
-    end
-
-    def self.browser_action_3
-      Support::ScreengemFixture::Actions::ActionThreeActionBrowser
     end
 
     #

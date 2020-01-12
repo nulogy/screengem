@@ -3,9 +3,7 @@ module Screengem
     it "has sensible defaults" do
       expect(Configuration.new).to have_attributes(
         apply_dampening: false,
-        browser_actions: false,
         dampen_configuration_root: "default",
-        action_scope: "Actions",
         question_scope: "Questions",
         task_scope: "Tasks"
       )
@@ -14,8 +12,6 @@ module Screengem
     it "is configurable" do
       Screengem.configure do |config|
         config.apply_dampening = false
-        config.browser_actions = true
-        config.action_scope = "MyProject::Actions"
         config.question_scope = "MyProject::Questions"
         config.task_scope = "MyProject::Tasks"
         config.dampen_configuration_filename = "some_filename"
@@ -24,8 +20,6 @@ module Screengem
 
       expect(Screengem.configuration).to have_attributes(
         apply_dampening: false,
-        browser_actions: true,
-        action_scope: "MyProject::Actions",
         question_scope: "MyProject::Questions",
         task_scope: "MyProject::Tasks",
         dampen_configuration_filename: "some_filename",
