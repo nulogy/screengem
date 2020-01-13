@@ -22,11 +22,10 @@ module Screengem
       generated_method_names = []
 
       Screengem::ScreenElement.descendants.each do |screen_element_class|
-        class_name = screen_element_class.name
-
         # Skip any anonymous classes. We can't do anything with them. Probably they're from testing.
-        next if class_name.blank?
+        next if screen_element_class.anonymous?
 
+        class_name = screen_element_class.name
         method_name = class_name.demodulize.underscore
 
         # Create some safety by detecting and failing fast for duplicate creation method names.
