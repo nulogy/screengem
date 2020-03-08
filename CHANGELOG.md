@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.10.1 (2020-01-11)
+
+* Relax the thor dependency
+
 ## 0.10.0 (2020-01-11)
 
 * Remove action abstraction
