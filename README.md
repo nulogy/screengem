@@ -30,15 +30,28 @@ A Task responds to perform.
 
 ## Actor Memory
 
-Actors are able to remember and recall facts. This is the recommended way to
-pass state between steps. To clear all actor's memory before each scenario
-add a hook: 
+Actors are able to remember and recall facts. This is the recommended way to pass state
+between steps. To clear every actor's memory before each scenario add a hook:
 
 ```
 Before do
   Screengem::ActorMemory.instance.clear
 end
 ```
+
+## Performing Tasks
+
+Actors are able to perform tasks. A task may be implemented by interacting with domain services,
+domain models, application databases, and the application via screen elements.
+
+Capybara is available to all screen elements and is the recommended way to interact with a browser.
+
+## Answering Questions
+
+Actors are able to answer questions. A question is considered to be answered affirmatively
+when no exception is thrown and negatively when an exception is thrown.
+
+RSpec matchers are available to all questions and are the recommended way to implement a question.
 
 ## Dampening
 
