@@ -51,7 +51,7 @@ Capybara is available to all screen elements and is the recommended way to inter
 Actors are able to answer questions. A question is considered to be answered affirmatively
 when no exception is thrown and negatively when an exception is thrown.
 
-RSpec matchers are available to all questions and are the recommended way to implement a question.
+[RSpec expectations](https://github.com/rspec/rspec-expectations) are available in all questions and are the recommended way to implement a question.
 
 ## Dampening
 
