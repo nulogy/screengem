@@ -18,11 +18,7 @@ module Screengem
     #
     def asks(*questions)
       questions.each do |question|
-        question.configure(self, screen)
-
-        next if question.answer
-
-        raise incorrect_answer(question)
+        question.configure(self, screen).answer
       end
 
       self
@@ -33,9 +29,7 @@ module Screengem
     #
     def performs(*tasks)
       tasks.each do |task|
-        task.configure(self, screen)
-
-        task.perform
+        task.configure(self, screen).perform
       end
 
       self
@@ -67,10 +61,6 @@ module Screengem
     end
 
     private
-
-    def incorrect_answer(question)
-      Screengem::IncorrectAnswer.new(question)
-    end
 
     def recollections
       ActorMemory.instance.recollections(self)

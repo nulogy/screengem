@@ -7,7 +7,6 @@ module Support
     module Questions
       class QuestionOneQuestion < Screengem::Question
         def execute
-          true
         end
       end
 
@@ -15,13 +14,11 @@ module Support
         skip_dampening
 
         def execute
-          true
         end
       end
 
       class QuestionThreeQuestion < Screengem::Question
         def execute
-          true
         end
       end
     end

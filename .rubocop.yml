@@ -1,5 +1,17 @@
 require: rubocop-rspec
 
+AllCops:
+  TargetRubyVersion: 2.5
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+
+Lint/RaiseException:
+  Enabled: false
+
+Lint/StructNewOverride:
+  Enabled: false
+
 Metrics/AbcSize:
   Enabled: false
 
@@ -35,6 +47,18 @@ RSpec/MessageSpies:
 
 RSpec/NotToNot:
   EnforcedStyle: to_not
+
+Style/ExponentialNotation:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

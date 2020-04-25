@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.11.0 (2020-04-26)
+
+### Breaking Changes
+
+* Questions answer negatively by throwing an exception rather than returning false
+
 ## 0.10.1 (2020-01-11)
 
 * Relax the thor dependency

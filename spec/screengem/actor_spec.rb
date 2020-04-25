@@ -36,15 +36,6 @@ module Screengem
 
         actor.asks(question_1, question_2, question_3)
       end
-
-      it "stops asking after first incorrect answer" do
-        expect(question_1).to receive(:configure).and_call_original
-        expect(question_1).to receive(:execute).and_return(false)
-
-        expect(question_2).to_not receive(:execute)
-
-        expect { actor.asks(question_1, question_2) }.to raise_error(IncorrectAnswer, "Question one?")
-      end
     end
 
     describe "performs" do
