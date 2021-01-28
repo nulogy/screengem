@@ -2,6 +2,13 @@
 
 ## master (unreleased)
 
+## 0.12.0 (2021-01-27)
+
+* Relax the thor dependency
+* Latest development dependencies
+
+### Breaking Changes
+
 ## 0.11.0 (2020-04-26)
 
 ### Breaking Changes

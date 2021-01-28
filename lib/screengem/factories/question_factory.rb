@@ -6,7 +6,7 @@ module Screengem
     class QuestionFactory < BasicObject
       include ::Singleton
 
-      def method_missing(question_name, *args) # rubocop:disable Style/MethodMissingSuper
+      def method_missing(question_name, *args)
         question_class_name = "#{question_name}_question".camelize
         question_class = "#{question_scope}::#{question_class_name}".constantize
 

@@ -6,7 +6,7 @@ module Screengem
     class TaskFactory < BasicObject
       include ::Singleton
 
-      def method_missing(task_name, *args) # rubocop:disable Style/MethodMissingSuper
+      def method_missing(task_name, *args)
         task_class_name = "#{task_name}_task".camelize
         task_class = "#{task_scope}::#{task_class_name}".constantize
 

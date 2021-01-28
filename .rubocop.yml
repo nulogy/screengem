@@ -1,7 +1,12 @@
 require: rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.6
+  NewCops: enable
+
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - spec/**/*_spec.rb
 
 Layout/SpaceAroundMethodCallOperator:
   Enabled: false
@@ -27,6 +32,10 @@ Metrics/MethodLength:
 Metrics/ModuleLength:
   Enabled: false
 
+Naming/VariableNumber:
+  Enabled: true
+  EnforcedStyle: snake_case
+
 RSpec/AnyInstance:
   Enabled: false
 
@@ -35,6 +44,9 @@ RSpec/DescribedClass:
 
 RSpec/ExampleLength:
   Max: 20
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 8
 
 RSpec/MultipleExpectations:
   Max: 5
@@ -61,6 +73,9 @@ Style/HashTransformValues:
   Enabled: false
 
 Style/Documentation:
+  Enabled: false
+
+Style/DocumentDynamicEvalDefinition:
   Enabled: false
 
 Style/EmptyMethod:

@@ -27,18 +27,18 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.required_ruby_version = ">= 2.5"
+  spec.required_ruby_version = ">= 2.6"
 
-  spec.add_runtime_dependency "activesupport", ">= 4.2", "< 6.1"
+  spec.add_runtime_dependency "activesupport", ">= 5.2", "< 6.1"
   spec.add_runtime_dependency "capybara", ">= 2.18", "< 4.0"
-  spec.add_runtime_dependency "require_all", ">= 2.0", "< 4.0"
-  spec.add_runtime_dependency "rspec-expectations", "~> 3.8"
-  spec.add_runtime_dependency "thor", ">= 0.20", "< 1.1"
+  spec.add_runtime_dependency "require_all", ">= 3.0", "< 4.0"
+  spec.add_runtime_dependency "rspec-expectations", "~> 3.10"
+  spec.add_runtime_dependency "thor", ">= 0.20", "< 1.2"
 
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.9"
-  spec.add_development_dependency "rubocop", "~> 0.82"
-  spec.add_development_dependency "rubocop-performance", "~> 1.5"
-  spec.add_development_dependency "rubocop-rspec", "~> 1.38"
-  spec.add_development_dependency "simplecov", "~> 0.18"
+  spec.add_development_dependency "rubocop", "~> 1.8"
+  spec.add_development_dependency "rubocop-performance", "~> 1.9"
+  spec.add_development_dependency "rubocop-rspec", "~> 2.1"
+  spec.add_development_dependency "simplecov", "~> 0.21"
 end
