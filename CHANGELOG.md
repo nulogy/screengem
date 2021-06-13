@@ -2,12 +2,15 @@
 
 ## master (unreleased)
 
+## 0.13.0 (2021-06-13)
+
+* Relax the ActiveSupport dependency
+* Latest development dependencies
+
 ## 0.12.0 (2021-01-27)
 
 * Relax the thor dependency
 * Latest development dependencies
-
-### Breaking Changes
 
 ## 0.11.0 (2020-04-26)
 
