@@ -1,12 +1,15 @@
 require: rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.7
   NewCops: enable
+  TargetRubyVersion: 2.7
 
 Lint/ConstantDefinitionInBlock:
   Exclude:
     - spec/**/*_spec.rb
+
+Layout/LineLength:
+  Max: 120
 
 Layout/SpaceAroundMethodCallOperator:
   Enabled: false
@@ -22,9 +25,6 @@ Metrics/AbcSize:
 
 Metrics/BlockLength:
   Enabled: false
-
-Metrics/LineLength:
-  Max: 120
 
 Metrics/MethodLength:
   Enabled: false
