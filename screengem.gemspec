@@ -33,12 +33,13 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "capybara", ">= 2.18", "< 4.0"
   spec.add_runtime_dependency "require_all", ">= 3.0", "< 4.0"
   spec.add_runtime_dependency "rspec-expectations", "~> 3.10"
-  spec.add_runtime_dependency "thor", ">= 0.20", "< 1.2"
+  spec.add_runtime_dependency "thor", "~> 1.2"
 
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.9"
-  spec.add_development_dependency "rubocop", "~> 1.8"
-  spec.add_development_dependency "rubocop-performance", "~> 1.9"
-  spec.add_development_dependency "rubocop-rspec", "~> 2.1"
+  spec.add_development_dependency "rubocop", "~> 1.24"
+  spec.add_development_dependency "rubocop-performance", "~> 1.13"
+  spec.add_development_dependency "rubocop-rake", "~> 0.6"
+  spec.add_development_dependency "rubocop-rspec", "~> 2.7"
   spec.add_development_dependency "simplecov", "~> 0.21"
 end
