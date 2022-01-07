@@ -2,6 +2,11 @@
 
 ## master (unreleased)
 
+## 0.14.0 (2022-01-06)
+
+* Update the thor dependency
+* Latest development dependencies
+
 ## 0.13.0 (2021-06-13)
 
 * Relax the ActiveSupport dependency

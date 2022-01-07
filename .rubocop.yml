@@ -4,6 +4,9 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.7
 
+Gemspec/RequireMFA:
+  Enabled: false
+
 Lint/ConstantDefinitionInBlock:
   Exclude:
     - spec/**/*_spec.rb
