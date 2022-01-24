@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.15.0 (2022-01-23)
+
+* Add actor hooks
+
 ## 0.14.0 (2022-01-06)
 
 * Update the thor dependency

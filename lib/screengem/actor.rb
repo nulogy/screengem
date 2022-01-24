@@ -17,6 +17,8 @@ module Screengem
     # Used by an actor to ask one or more questions in a step definition.
     #
     def asks(*questions)
+      before_actor_asks(*questions)
+
       questions.each do |question|
         question.configure(self, screen).answer
       end
@@ -24,15 +26,25 @@ module Screengem
       self
     end
 
+    def before_actor_asks(*_questions)
+      # Hook to customize actor behaviour.
+    end
+
     #
     # Used by an actor to perform one or more tasks in a step definition.
     #
     def performs(*tasks)
+      before_actor_performs(*tasks)
+
       tasks.each do |task|
         task.configure(self, screen).perform
       end
 
       self
+    end
+
+    def before_actor_performs(*_tasks)
+      # Hook to customize actor behaviour.
     end
 
     #
