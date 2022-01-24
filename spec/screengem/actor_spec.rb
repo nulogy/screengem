@@ -36,6 +36,12 @@ module Screengem
 
         actor.asks(question_1, question_2, question_3)
       end
+
+      it "before_actor_asks hook" do
+        expect(actor).to receive(:before_actor_asks).with(*question_1) # rubocop:disable RSpec/SubjectStub
+
+        actor.asks(question_1)
+      end
     end
 
     describe "performs" do
@@ -52,6 +58,12 @@ module Screengem
         end
 
         actor.performs(task_1, task_2, task_3)
+      end
+
+      it "before_actor_performs hook" do
+        expect(actor).to receive(:before_actor_performs).with(*task_1) # rubocop:disable RSpec/SubjectStub
+
+        actor.performs(task_1)
       end
     end
 
