@@ -82,6 +82,12 @@ module Screengem
         expect(actor.recall(:company_name)).to eq("PackPlus")
       end
 
+      it "recall with a default" do
+        actor.remember(book: "It", state: "Maine")
+
+        expect(actor.recall(:movie, default: "Misery")).to eq("Misery")
+      end
+
       it "displays a message when the tag cannot be recalled" do
         actor.remember(book: "It", state: "Maine")
 
