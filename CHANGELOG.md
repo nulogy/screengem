@@ -1,6 +1,12 @@
 # Change log
 
-## master (unreleased)
+## main (unreleased)
+
+## 0.16.0 (2022-08-03)
+
+* Allow actor to recall with a default
+* Update the capybara dependency
+* Latest development dependencies
 
 ## 0.15.0 (2022-01-23)
 
