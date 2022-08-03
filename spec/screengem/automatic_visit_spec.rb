@@ -48,11 +48,11 @@ module Screengem
     end
 
     it "responds to a public method" do
-      expect(screen_element.respond_to?(:a_public_method)).to eq(true)
+      expect(screen_element.respond_to?(:a_public_method)).to be(true)
     end
 
     it "does not respond to a private method" do
-      expect(screen_element.respond_to?(:a_private_method)).to eq(false)
+      expect(screen_element.respond_to?(:a_private_method)).to be(false)
     end
 
     it "raises method missing for an unknown method" do

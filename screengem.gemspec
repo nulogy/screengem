@@ -29,17 +29,17 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.required_ruby_version = ">= 2.7"
 
-  spec.add_runtime_dependency "activesupport", ">= 5.2", "< 6.2"
-  spec.add_runtime_dependency "capybara", ">= 2.18", "< 4.0"
+  spec.add_runtime_dependency "activesupport", ">= 5.2", "< 7.0"
+  spec.add_runtime_dependency "capybara", ">= 3.0", "< 4.0"
   spec.add_runtime_dependency "require_all", ">= 3.0", "< 4.0"
-  spec.add_runtime_dependency "rspec-expectations", "~> 3.10"
+  spec.add_runtime_dependency "rspec-expectations", "~> 3.11"
   spec.add_runtime_dependency "thor", "~> 1.2"
 
   spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.9"
-  spec.add_development_dependency "rubocop", "~> 1.24"
-  spec.add_development_dependency "rubocop-performance", "~> 1.13"
+  spec.add_development_dependency "rspec", "~> 3.11"
+  spec.add_development_dependency "rubocop", "~> 1.32"
+  spec.add_development_dependency "rubocop-performance", "~> 1.14"
   spec.add_development_dependency "rubocop-rake", "~> 0.6"
-  spec.add_development_dependency "rubocop-rspec", "~> 2.7"
+  spec.add_development_dependency "rubocop-rspec", "~> 2.12"
   spec.add_development_dependency "simplecov", "~> 0.21"
 end
