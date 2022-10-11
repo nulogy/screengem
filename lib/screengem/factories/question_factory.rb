@@ -24,8 +24,6 @@ module Screengem
 
       class QuestionError < ::Screengem::Question
         include FactoryCreationError
-
-        skip_dampening
       end
 
       private

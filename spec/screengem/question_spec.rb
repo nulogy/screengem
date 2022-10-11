@@ -13,10 +13,5 @@ module Screengem
 
       configured_question.answer
     end
-
-    it "all questions support dampening unless overridden with skip_dampening" do
-      expect(Support::ScreengemFixture.question_supports_dampening).to be_supports_dampening
-      expect(Support::ScreengemFixture.question_skips_dampening).to_not be_supports_dampening
-    end
   end
 end

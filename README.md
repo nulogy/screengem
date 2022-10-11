@@ -53,19 +53,6 @@ when no exception is thrown and negatively when an exception is thrown.
 
 [RSpec expectations](https://github.com/rspec/rspec-expectations) are available in all questions and are the recommended way to implement a question.
 
-## Dampening
-
-It sometimes makes sense to slow down the automation. This is known as dampening.
-
-To enable and configure dampening perform the following steps:
-
-1. Create a sample dampening configuration `screengem generate --root features_screenplay`
-1. Tweak the sample dampening configuration
-1. Promote the sample dampening configuration `cp ./features_screenplay/dampen_configuration.yml.sample ./features_screenplay/dampen_configuration.yml`
-1. Enable dampening `export APPLY_DAMPENING=1`
-
-To stop dampening, run `unset APPLY_DAMPENING`
-
 ## Installation
 
 Add this line to your application's Gemfile:

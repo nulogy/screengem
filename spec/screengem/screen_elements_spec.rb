@@ -23,8 +23,8 @@ module Screengem
     end
 
     it "wraps as expected" do
-      expect(screen.screen_element_example_one).to be_a_kind_of(Screengem::ScreenElement)
-      expect(screen.screen_element_example_two).to be_a_kind_of(Screengem::AutomaticVisit)
+      expect(screen.screen_element_example_one).to be_a(Screengem::ScreenElement)
+      expect(screen.screen_element_example_two).to be_a(Screengem::AutomaticVisit)
     end
   end
 end

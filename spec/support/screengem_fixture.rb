@@ -11,8 +11,6 @@ module Support
       end
 
       class QuestionTwoQuestion < Screengem::Question
-        skip_dampening
-
         def execute
         end
       end
@@ -30,22 +28,16 @@ module Support
       end
 
       class TaskTwoTask < Screengem::Task
-        dampen_for 3.seconds
-
         def execute
         end
       end
 
       class TaskThreeTask < Screengem::Task
-        skip_dampening
-
         def execute
         end
       end
 
       class TaskFourTask < Screengem::Task
-        skip_dampening
-
         def execute
           actor.performs(task.task_one, task.task_two)
         end
@@ -71,14 +63,6 @@ module Support
       Support::ScreengemFixture::Questions::QuestionThreeQuestion
     end
 
-    def self.question_supports_dampening
-      question_1
-    end
-
-    def self.question_skips_dampening
-      question_2
-    end
-
     #
     # Convenience methods for tasks
     #
@@ -96,18 +80,6 @@ module Support
 
     def self.task_4
       Support::ScreengemFixture::Tasks::TaskFourTask
-    end
-
-    def self.task_supports_dampening
-      task_1
-    end
-
-    def self.task_supports_dampen_for
-      task_2
-    end
-
-    def self.task_skips_dampening
-      task_3
     end
 
     def self.composite_task
