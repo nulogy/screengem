@@ -41,55 +41,12 @@ module Screengem
     end
 
     describe "factory" do
-      before do
-        allow(File).to receive(:exist?).with("some_filename").and_return(true)
-        allow(YAML).to receive(:load_file).with("some_filename").and_return(dampen_configuration)
-      end
-
       let(:factory) { DampenConfiguration::DampenConfigurationFactory.new }
 
       it "configured to not apply dampening" do
-        Screengem.configuration.apply_dampening = false
-
         dampen_configuration = factory.build_configuration
 
         expect(dampen_configuration).to be_a(Screengem::DampenConfiguration::None)
-      end
-
-      it "configured to apply dampening" do
-        Screengem.configuration.apply_dampening = true
-
-        dampen_configuration = factory.build_configuration
-
-        expect(dampen_configuration).to be_a(Screengem::DampenConfiguration::Standard)
-      end
-    end
-
-    describe "standard configuration" do
-      let(:standard) { DampenConfiguration::Standard.new(dampen_configuration) }
-
-      it "question with configuration" do
-        question_class_name = "Questions::FormHasTitle"
-
-        expect(standard.seconds_to_dampen(:questions, question_class_name)).to eq(2)
-      end
-
-      it "question without configuration" do
-        question_class_name = "Questions::SomeName"
-
-        expect(standard.seconds_to_dampen(:questions, question_class_name)).to eq(0)
-      end
-
-      it "task with configuration" do
-        task_class_name = "Tasks::SelectForm"
-
-        expect(standard.seconds_to_dampen(:tasks, task_class_name)).to eq(3)
-      end
-
-      it "task without configuration" do
-        task_class_name = "Tasks::SomeName"
-
-        expect(standard.seconds_to_dampen(:tasks, task_class_name)).to eq(0)
       end
     end
 
