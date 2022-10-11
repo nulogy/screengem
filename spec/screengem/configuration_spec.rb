@@ -1,6 +1,8 @@
 module Screengem
   RSpec.describe Configuration do
     it "has sensible defaults" do
+      Screengem.configure
+
       expect(Configuration.new).to have_attributes(
         apply_dampening: false,
         dampen_configuration_root: "default",
