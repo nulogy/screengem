@@ -26,12 +26,6 @@ module Screengem
 
         expect(task_class).to be_supports_dampening
       end
-
-      it "that with custom dampening" do
-        task_class = Support::ScreengemFixture.task_supports_dampen_for
-
-        expect(task_class).to be_supports_dampening.and have_attributes(seconds_to_dampen: 3)
-      end
     end
   end
 end

@@ -30,8 +30,6 @@ module Support
       end
 
       class TaskTwoTask < Screengem::Task
-        dampen_for 3.seconds
-
         def execute
         end
       end
@@ -100,10 +98,6 @@ module Support
 
     def self.task_supports_dampening
       task_1
-    end
-
-    def self.task_supports_dampen_for
-      task_2
     end
 
     def self.task_skips_dampening
