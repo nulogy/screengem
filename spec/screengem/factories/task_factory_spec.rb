@@ -12,13 +12,13 @@ module Screengem
       it "creates task" do
         task = task_factory.task_one
 
-        expect(task).to be_a_kind_of(Support::ScreengemFixture.task_1)
+        expect(task).to be_a(Support::ScreengemFixture.task_1)
       end
 
       it "creates error task for unknown tasks" do
         task = task_factory.unknown
 
-        expect(task).to be_a_kind_of(TaskFactory::TaskError)
+        expect(task).to be_a(TaskFactory::TaskError)
         expect { task.execute }.to raise_error(Screengem::ScreengemError, /Unable to create task: 'UnknownTask'/)
       end
     end

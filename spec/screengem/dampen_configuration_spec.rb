@@ -53,7 +53,7 @@ module Screengem
 
         dampen_configuration = factory.build_configuration
 
-        expect(dampen_configuration).to be_a_kind_of(Screengem::DampenConfiguration::None)
+        expect(dampen_configuration).to be_a(Screengem::DampenConfiguration::None)
       end
 
       it "configured to apply dampening" do
@@ -61,7 +61,7 @@ module Screengem
 
         dampen_configuration = factory.build_configuration
 
-        expect(dampen_configuration).to be_a_kind_of(Screengem::DampenConfiguration::Standard)
+        expect(dampen_configuration).to be_a(Screengem::DampenConfiguration::Standard)
       end
     end
 

@@ -12,13 +12,13 @@ module Screengem
       it "creates question" do
         question = question_factory.question_one
 
-        expect(question).to be_a_kind_of(Support::ScreengemFixture.question_1)
+        expect(question).to be_a(Support::ScreengemFixture.question_1)
       end
 
       it "creates error question for unknown questions" do
         question = question_factory.unknown
 
-        expect(question).to be_a_kind_of(QuestionFactory::QuestionError)
+        expect(question).to be_a(QuestionFactory::QuestionError)
         expect { question.execute }.to raise_error(
           Screengem::ScreengemError, /Unable to create question: 'UnknownQuestion'/
         )

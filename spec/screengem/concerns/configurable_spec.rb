@@ -8,7 +8,7 @@ module Screengem
     it "adds configurability" do
       configured = configurable.configure(actor, screen)
 
-      expect(configured).to be_a_kind_of(Configurable).and have_attributes(actor: actor, screen: screen)
+      expect(configured).to be_a(Configurable).and have_attributes(actor: actor, screen: screen)
     end
   end
 end
