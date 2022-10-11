@@ -13,7 +13,6 @@ require "screengem/screen_element"
 require "screengem/screengem_error"
 
 require "screengem/configuration"
-require "screengem/dampen_configuration"
 
 require "screengem/concerns/configurable"
 require "screengem/concerns/executable"
