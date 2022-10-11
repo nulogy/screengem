@@ -63,14 +63,6 @@ module Support
       Support::ScreengemFixture::Questions::QuestionThreeQuestion
     end
 
-    def self.question_supports_dampening
-      question_1
-    end
-
-    def self.question_skips_dampening
-      question_2
-    end
-
     #
     # Convenience methods for tasks
     #
@@ -88,14 +80,6 @@ module Support
 
     def self.task_4
       Support::ScreengemFixture::Tasks::TaskFourTask
-    end
-
-    def self.task_supports_dampening
-      task_1
-    end
-
-    def self.task_skips_dampening
-      task_3
     end
 
     def self.composite_task
