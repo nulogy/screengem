@@ -11,8 +11,6 @@ module Screengem
 
     include Screengem::DSL
 
-    dampen_scope :tasks
-
     def perform
       execute.tap { sleep(seconds_to_dampen) }
     end

@@ -21,19 +21,10 @@ module Screengem
           false
         end
       end
-
-      #
-      # Specify the dampening configuration scope.
-      #
-      def dampen_scope(scope)
-        define_method(:dampening_scope) do
-          scope
-        end
-      end
     end
 
     def seconds_to_dampen
-      dampen_configuration.seconds_to_dampen(dampening_scope, self.class.name)
+      0
     end
 
     private
