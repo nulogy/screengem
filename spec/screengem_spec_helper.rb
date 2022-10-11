@@ -9,8 +9,3 @@ require "support/screengem_fixture"
 
 # Require the shared examples
 Dir["./spec/support/shared_examples/*.rb"].sort.each { |f| require f }
-
-# Configure the Screengem gem
-Screengem.configure do |config|
-  config.apply_dampening = false
-end
