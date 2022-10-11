@@ -1,4 +1,7 @@
-require: rubocop-rspec
+require:
+  - rubocop-performance
+  - rubocop-rake
+  - rubocop-rspec
 
 AllCops:
   NewCops: enable
@@ -47,6 +50,10 @@ RSpec/DescribedClass:
 
 RSpec/ExampleLength:
   Max: 20
+
+RSpec/FilePath:
+  Exclude:
+    - spec/screengem/concerns/*_spec.rb
 
 RSpec/MultipleMemoizedHelpers:
   Max: 8
