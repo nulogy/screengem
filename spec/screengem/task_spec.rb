@@ -15,10 +15,6 @@ module Screengem
 
         configured_task.perform
       end
-
-      it "all tasks support dampening unless overridden with skip_dampening" do
-        expect(Support::ScreengemFixture.task_1).to be_supports_dampening
-      end
     end
 
     describe "composite task" do

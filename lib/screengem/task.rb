@@ -6,13 +6,12 @@ module Screengem
     include RSpec::Matchers
 
     include Screengem::Configurable
-    include Screengem::Dampenable
     include Screengem::Executable
 
     include Screengem::DSL
 
     def perform
-      execute.tap { sleep(seconds_to_dampen) }
+      execute
     end
   end
 end

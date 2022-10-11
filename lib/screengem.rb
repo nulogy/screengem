@@ -17,7 +17,6 @@ require "screengem/primitive_key"
 require "screengem/dampen_configuration"
 
 require "screengem/concerns/configurable"
-require "screengem/concerns/dampenable"
 require "screengem/concerns/executable"
 
 require "screengem/dsl"
