@@ -24,8 +24,6 @@ module Screengem
 
       class TaskError < ::Screengem::Task
         include FactoryCreationError
-
-        skip_dampening
       end
 
       private

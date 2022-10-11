@@ -11,8 +11,6 @@ module Support
       end
 
       class QuestionTwoQuestion < Screengem::Question
-        skip_dampening
-
         def execute
         end
       end
@@ -35,15 +33,11 @@ module Support
       end
 
       class TaskThreeTask < Screengem::Task
-        skip_dampening
-
         def execute
         end
       end
 
       class TaskFourTask < Screengem::Task
-        skip_dampening
-
         def execute
           actor.performs(task.task_one, task.task_two)
         end
