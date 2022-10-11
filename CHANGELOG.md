@@ -2,6 +2,12 @@
 
 ## main (unreleased)
 
+## 0.17.0 (2022-10-11)
+
+### Breaking Changes
+
+* Drop support for dampening
+
 ## 0.16.0 (2022-08-03)
 
 * Allow actor to recall with a default
