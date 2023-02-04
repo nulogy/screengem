@@ -3,6 +3,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "screengem/version"
 
 Gem::Specification.new do |spec|
+  spec.metadata = { "rubygems_mfa_required" => "true" }
+
   spec.name = "screengem"
   spec.version = Screengem::VERSION
   spec.authors = ["Alistair McKinnell"]

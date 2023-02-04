@@ -2,6 +2,10 @@
 
 ## main (unreleased)
 
+## 0.18.0 (2023-02-04)
+
+* Support Ruby 3.x
+
 ## 0.17.0 (2022-10-11)
 
 ### Breaking Changes
