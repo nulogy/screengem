@@ -6,17 +6,21 @@ module Screengem
     class TaskFactory < BasicObject
       include ::Singleton
 
-      def method_missing(task_name, *args)
-        task_class_name = "#{task_name}_task".camelize
-        task_class = "#{task_scope}::#{task_class_name}".constantize
+      definition = ::RUBY_VERSION >= "2.7" ? "..." : "*args"
 
-        task_class.new(*args)
-      rescue => e
-        TaskError.new(<<~MSG)
-          Unable to create task: '#{task_class_name}'.
-            Details: #{e.message}
-        MSG
-      end
+      class_eval <<~RUBY, __FILE__, __LINE__ + 1
+        def method_missing(task_name, #{definition})
+          task_class_name = "\#{task_name}_task".camelize
+          task_class = "\#{task_scope}::\#{task_class_name}".constantize
+
+          task_class.new(#{definition})
+        rescue => e
+          TaskError.new(<<~MSG)
+            Unable to create task: '\#{task_class_name}'.
+              Details: \#{e.message}
+          MSG
+        end
+      RUBY
 
       def respond_to_missing?(_task_name, *)
         true

@@ -11,25 +11,25 @@ module Screengem
       @screen_element = screen_element
     end
 
-    def method_missing(method, *args)
-      if screen_element.respond_to?(method)
-        forward_with_auto_visit(method, args)
-      else
-        super
+    definition = ::RUBY_VERSION >= "2.7" ? "..." : "*args"
+
+    class_eval <<~RUBY, __FILE__, __LINE__ + 1
+      def method_missing(method, #{definition})
+        if screen_element.respond_to?(method)
+          screen_element.visit if auto_visit?(method)
+
+          screen_element.send(method, #{definition})
+        else
+          super
+        end
       end
-    end
+    RUBY
 
     def respond_to_missing?(method, *)
       screen_element.respond_to?(method)
     end
 
     private
-
-    def forward_with_auto_visit(method, args)
-      screen_element.visit if auto_visit?(method)
-
-      screen_element.send(method, *args)
-    end
 
     def auto_visit?(method)
       methods_to_decorate.include?(method)
