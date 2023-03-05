@@ -37,14 +37,14 @@ module Screengem
 
         if auto_visit?(screen_element_class)
           class_eval(<<~RUBY, __FILE__, __LINE__ + 1)
-            def #{method_name}(*args)
-              Screengem::AutomaticVisit.new(#{class_name}.new(*args))
+            def #{method_name}(...)
+              Screengem::AutomaticVisit.new(#{class_name}.new(...))
             end
           RUBY
         else
           class_eval(<<~RUBY, __FILE__, __LINE__ + 1)
-            def #{method_name}(*args)
-              #{class_name}.new(*args)
+            def #{method_name}(...)
+              #{class_name}.new(...)
             end
           RUBY
         end
