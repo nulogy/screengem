@@ -3,8 +3,6 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "screengem/version"
 
 Gem::Specification.new do |spec|
-  spec.metadata = { "rubygems_mfa_required" => "true" }
-
   spec.name = "screengem"
   spec.version = Screengem::VERSION
   spec.authors = ["Alistair McKinnell"]
@@ -18,7 +16,8 @@ Gem::Specification.new do |spec|
     "homepage_uri" => "https://github.com/nulogy/screengem",
     "changelog_uri" => "https://github.com/nulogy/screengem/blob/master/CHANGELOG.md",
     "source_code_uri" => "https://github.com/nulogy/screengem",
-    "bug_tracker_uri" => "https://github.com/nulogy/screengem/issues"
+    "bug_tracker_uri" => "https://github.com/nulogy/screengem/issues",
+    "rubygems_mfa_required" => "true"
   }
 
   # Specify which files should be added to the gem when it is released.

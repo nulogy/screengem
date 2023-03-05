@@ -2,6 +2,10 @@
 
 ## main (unreleased)
 
+## 0.18.1 (2023-03-05)
+
+* Refine support for Ruby 3.x
+
 ## 0.18.0 (2023-02-04)
 
 * Support Ruby 3.x

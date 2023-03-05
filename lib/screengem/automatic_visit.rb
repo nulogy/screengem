@@ -11,7 +11,7 @@ module Screengem
       @screen_element = screen_element
     end
 
-    definition = ::RUBY_VERSION >= "2.7" ? "..." : "*args"
+    definition = ::RUBY_VERSION >= "3.0" ? "..." : "*args"
 
     class_eval <<~RUBY, __FILE__, __LINE__ + 1
       def method_missing(method, #{definition})
