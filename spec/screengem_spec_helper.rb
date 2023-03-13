@@ -8,4 +8,4 @@ require "screengem"
 require "support/screengem_fixture"
 
 # Require the shared examples
-Dir["./spec/support/shared_examples/*.rb"].sort.each { |f| require f }
+Dir["./spec/support/shared_examples/*.rb"].each { |f| require f }
