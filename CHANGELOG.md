@@ -2,6 +2,15 @@
 
 ## main (unreleased)
 
+## 0.19.0 (2023-03-13)
+
+* Support Rails 7.0
+
+### Breaking Changes
+
+* Drop support for Ruby 2.7
+* Drop support for Rails 5.2
+
 ## 0.18.1 (2023-03-05)
 
 * Refine support for Ruby 3.x
