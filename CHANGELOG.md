@@ -2,6 +2,10 @@
 
 ## main (unreleased)
 
+## 0.20.1 (2023-10-16)
+
+* Fix support Rails 7.1.1
+
 ## 0.20.0 (2023-10-16)
 
 * Support Rails 7.1.1
