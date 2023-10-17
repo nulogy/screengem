@@ -51,9 +51,8 @@ RSpec/DescribedClass:
 RSpec/ExampleLength:
   Max: 20
 
-RSpec/FilePath:
-  Exclude:
-    - spec/screengem/concerns/*_spec.rb
+RSpec/IndexedLet:
+  Enabled: false
 
 RSpec/MultipleMemoizedHelpers:
   Max: 8
