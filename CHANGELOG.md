@@ -2,6 +2,13 @@
 
 ## main (unreleased)
 
+## 0.20.1 (2023-10-16)
+
+* Support Rails 7.1.x
+* Latest development dependencies
+* Address rubocop violations
+* Rework the .gitignore file
+
 ## 0.20.0 (2023-10-16)
 
 * Support Rails 7.1.1
