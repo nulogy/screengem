@@ -57,6 +57,22 @@ module Screengem
 
           screen_element.visit
         end
+
+        it "skip visit when currently navigated to visit_path with an empty query" do
+          allow(page).to receive(:current_url).and_return("http://localhost/some/path?")
+
+          expect(page).to_not receive(:visit)
+
+          screen_element.visit
+        end
+
+        it "skip visit when currently navigated to visit_path with an empty fragment" do
+          allow(page).to receive(:current_url).and_return("http://localhost/some/path#")
+
+          expect(page).to_not receive(:visit)
+
+          screen_element.visit
+        end
       end
 
       context "when visit_path has a query string" do
