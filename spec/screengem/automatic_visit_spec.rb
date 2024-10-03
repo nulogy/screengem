@@ -12,7 +12,7 @@ module Screengem
     let(:screen_element_class) do
       Class.new(Screengem::ScreenElement) do
         def visit_path
-          "some/path"
+          "/some/path"
         end
 
         def a_public_method
@@ -32,7 +32,7 @@ module Screengem
     end
 
     it "decorates a public method by calling visit first" do
-      allow(capybara_session).to receive(:current_path).and_return("some/path")
+      allow(capybara_session).to receive(:current_url).and_return("http://localhost/some/path")
 
       expect(screen_element).to receive(:visit).and_call_original
 
@@ -40,7 +40,7 @@ module Screengem
     end
 
     it "decorates an inherited method" do
-      allow(capybara_session).to receive(:current_path).and_return("some/path")
+      allow(capybara_session).to receive(:current_url).and_return("http://localhost/some/path")
 
       expect(screen_element).to receive(:visit).and_call_original
 

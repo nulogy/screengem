@@ -2,6 +2,16 @@
 
 ## main (unreleased)
 
+## 0.21.0 (2024-10-03)
+
+### New Features
+
+* Auto visit considers all of the URI
+
+### Breaking Changes
+
+* Drop support for Ruby 3.0 and Ruby 3.1
+
 ## 0.20.1 (2023-10-16)
 
 * Support Rails 7.1.x
