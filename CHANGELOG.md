@@ -2,6 +2,14 @@
 
 ## main (unreleased)
 
+## 0.21.1 (2024-10-03)
+
+### Bug fixes
+
+* Handle special cases for the URI auto visit
+  * Empty query
+  * Empty fragment
+
 ## 0.21.0 (2024-10-03)
 
 ### New Features

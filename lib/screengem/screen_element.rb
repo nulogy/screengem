@@ -32,8 +32,8 @@ module Screengem
       uri = URI(page.current_url)
 
       current_uri = uri.path
-      current_uri += "?#{uri.query}" if uri.query
-      current_uri += "##{uri.fragment}" if uri.fragment
+      current_uri += "?#{uri.query}" if uri.query.present?
+      current_uri += "##{uri.fragment}" if uri.fragment.present?
 
       current_uri
     end
