@@ -2,6 +2,13 @@
 
 ## main (unreleased)
 
+## 0.21.2 (2024-10-03)
+
+### Bug fixes
+
+* Restore behaviour of URI auto visit for screen elements
+  that define a visit_path that contains a query
+
 ## 0.21.1 (2024-10-03)
 
 ### Bug fixes
