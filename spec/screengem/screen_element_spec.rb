@@ -75,7 +75,7 @@ module Screengem
         end
       end
 
-      context "when visit_path has a query string" do
+      context "when visit_path has a query string always visit" do
         let(:screen_element) do
           Class.new(ScreenElement) do
             def visit_path
@@ -96,10 +96,10 @@ module Screengem
           screen_element.visit
         end
 
-        it "skip visit when currently navigated to visit_path" do
+        it "visit when currently navigated to visit_path" do
           allow(page).to receive(:current_url).and_return("http://localhost/some/path?foo=bar")
 
-          expect(page).to_not receive(:visit)
+          expect(page).to receive(:visit)
 
           screen_element.visit
         end
