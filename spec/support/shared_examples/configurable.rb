@@ -5,6 +5,6 @@ RSpec.shared_examples "configurable" do
 
     subject = described_class.new.configure(actor, screen)
 
-    expect(subject).to have_attributes(actor: actor, screen: screen)
+    expect(subject).to have_attributes(actor:, screen:)
   end
 end

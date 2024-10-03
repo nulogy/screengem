@@ -103,7 +103,7 @@ module Screengem
           allow(model).to receive(:respond_to?).and_return(true)
           expect(model).to receive(:reload)
 
-          actor.remember(model: model)
+          actor.remember(model:)
 
           actor.recall(:model)
         end
@@ -112,7 +112,7 @@ module Screengem
           allow(model).to receive(:respond_to?).and_return(false)
           expect(model).to_not receive(:reload)
 
-          actor.remember(model: model)
+          actor.remember(model:)
 
           actor.recall(:model)
         end
@@ -121,7 +121,7 @@ module Screengem
           allow(model).to receive(:respond_to?).and_return(true)
           expect(model).to_not receive(:reload)
 
-          actor.remember(model: model)
+          actor.remember(model:)
 
           actor.recall(:model, reload: false)
         end
