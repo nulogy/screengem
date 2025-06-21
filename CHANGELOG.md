@@ -2,6 +2,17 @@
 
 ## main (unreleased)
 
+## 0.22.0 (2025-06-21)
+
+* Support Rails 7.2.x
+* Latest development dependencies
+* Address rubocop violations
+
+### Breaking Changes
+
+* Drop support for Rails 6.x
+* Drop support for Ruby 3.2
+
 ## 0.21.2 (2024-10-03)
 
 ### Bug fixes

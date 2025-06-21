@@ -1,11 +1,11 @@
-require:
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.3
+
+plugins:
   - rubocop-performance
   - rubocop-rake
   - rubocop-rspec
-
-AllCops:
-  NewCops: enable
-  TargetRubyVersion: 3.2
 
 Gemspec/RequireMFA:
   Enabled: false
