@@ -2,9 +2,18 @@
 
 ## main (unreleased)
 
+## 0.23.0 (2025-10-18)
+
+* Support Rails 8.0
+* Add appraisal gem
+
+### Breaking Changes
+
+* Drop support for Rails 7.0 and 7.1
+
 ## 0.22.0 (2025-06-21)
 
-* Support Rails 7.2.x
+* Support Rails 7.2
 * Latest development dependencies
 * Address rubocop violations
 
