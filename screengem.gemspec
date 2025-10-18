@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.required_ruby_version = ">= 3.3"
 
-  spec.add_dependency "activesupport", ">= 7.0", "< 8.0"
+  spec.add_dependency "activesupport", ">= 7.2", "< 8.1"
   spec.add_dependency "capybara", ">= 3.0", "< 4.0"
   spec.add_dependency "require_all", ">= 3.0", "< 4.0"
   spec.add_dependency "rspec-expectations", "~> 3.12"
