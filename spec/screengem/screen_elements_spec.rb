@@ -3,7 +3,8 @@ module Screengem
     # rubocop:disable RSpec/LeakyConstantDeclaration
     Module.new do
       # Does not override the visit_path method
-      ScreenElementExampleOne = Class.new(Screengem::ScreenElement)
+      class ScreenElementExampleOne < Screengem::ScreenElement
+      end
 
       # Does override the visit_path method
       ScreenElementExampleTwo = Class.new(Screengem::ScreenElement) do

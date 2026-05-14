@@ -54,7 +54,7 @@ module Screengem
     private
 
     def auto_visit?(screen_element)
-      screen_element.instance_methods(false).include?(:visit_path)
+      screen_element.method_defined?(:visit_path, false)
     end
   end
 end
