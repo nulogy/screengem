@@ -1,3 +1,4 @@
 module Screengem
-  ScreengemError = Class.new(RuntimeError)
+  class ScreengemError < RuntimeError
+  end
 end
