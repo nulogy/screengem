@@ -2,6 +2,14 @@
 
 ## main (unreleased)
 
+## 0.24.0 (2026-05-14)
+
+* Support Rails 8.1
+
+### Breaking Changes
+
+* Drop support for Rails 7.2
+
 ## 0.23.0 (2025-10-18)
 
 * Support Rails 8.0
